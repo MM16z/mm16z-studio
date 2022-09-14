@@ -1,0 +1,78 @@
+@import "../../SASS/VARIABLE/theme-color.scss";
+
+.home-second-section {
+    z-index: "";
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.warper_mm16z {
+    position: absolute;
+    top: 2vh;
+    left: 2.25vw;
+}
+#mm16z {
+    z-index: 100;
+    font-family: "Silkscreen", cursive;
+    position: relative;
+    letter-spacing: -0.3vw;
+    opacity: 0;
+    //
+    background: linear-gradient(to bottom, #00c4eb 0%, #da06ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    margin-bottom: -0.9vw;
+}
+#mm16z-studio_letter {
+    z-index: 100;
+    position: relative;
+    font-family: "Chakra Petch", sans-serif;
+    color: $white;
+    font-size: 1.5vw;
+    left: 2.5vw;
+    opacity: 0;
+}
+#second-section-text1 {
+    z-index: 5;
+    font-family: "Noto Sans Thai", sans-serif;
+    position: absolute;
+    color: $white;
+    font-size: 10.16vw;
+    line-height: 9vw;
+    bottom: 0vh;
+    left: 4vw;
+    text-align: center;
+    white-space: nowrap;
+}
+#second-section-text1 span {
+    margin: 0;
+}
+.second-section-texts-warpper {
+    max-width: 100%;
+    overflow: hidden;
+}
+#second-section-text1,
+#second-section-text2 {
+    display: inline-block;
+    white-space: nowrap;
+}
+#second-section-text2 {
+    z-index: 5;
+    font-family: "Noto Sans Thai", sans-serif;
+    position: absolute;
+    color: $white;
+    font-size: 10.16vw;
+    line-height: 9vw;
+    bottom: -25vh;
+    left: 4vw;
+    text-align: center;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    color: rgb(253, 181, 255);
+}
+#second-section-text2 span {
+    margin: 0;
+}
