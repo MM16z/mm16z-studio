@@ -25,9 +25,24 @@ function Home() {
   const circle2 = useRef();
   const pageoverallwarperRef = useRef();
   const scrollbarstate = useRef();
+  const loadingpage = useRef();
 
   const [isShown, setIsShown] = useState(true);
-  const [isplayervisible, setVolume] = useState(null);
+  const [isplayervisible, setVolume] = useState();
+  const [loadstate, setLoadstate] = useState(0);
+  const [loadedfilecount, setIsloadedfilecount] = useState(null);
+  const [isloaded, setIsloaded] = useState(false);
+
+  const [isimageloaded, setIsimageLoaded] = useState({
+    img1: null,
+    img2: null,
+    img3: null,
+    img4: null,
+    img5: null,
+    img6: null,
+    img7: null,
+    video1: null,
+  });
 
   const handleClick = () => {
     scrollbarstate.current.torainbowsection();
@@ -327,6 +342,13 @@ function Home() {
           "reverse";
         },
         scrub: 1,
+      },
+    });
+    gsap.to(".loading-screen", {
+      display: "none",
+      scrollTrigger: {
+        trigger: ".home-second-section",
+        start: "top 90%",
       },
     });
     gsap.to("#mm16z-z_letter", {
@@ -717,8 +739,46 @@ function Home() {
       },
     });
   }, []);
+  useEffect(() => {
+          console.log("meow");
+    const count = Object.values(isimageloaded).filter(
+      (item) => item === true
+    ).length;
+    setIsloadedfilecount(count);
+    if (loadedfilecount >= 6) {
+      loadingpage.current.classList.add("loaded");
+    }
+    if (loadedfilecount === 0) {
+      setLoadstate(16.6);
+    } else if (loadedfilecount === 1) {
+      setLoadstate(25);
+    } else if (loadedfilecount === 2) {
+      setLoadstate(37.2);
+    } else if (loadedfilecount === 3) {
+      setLoadstate(55);
+    } else if (loadedfilecount === 4) {
+      setLoadstate(68.7);
+    } else if (loadedfilecount === 5) {
+      setLoadstate(74.2);
+    } else if (loadedfilecount === 6) {
+      setLoadstate(89);
+    } else if (loadedfilecount === 7) {
+      setLoadstate(100);
+    }
+    if (loadedfilecount >= 7) {
+      loadingpage.current.classList.add("active");
+    } else {
+      loadingpage.current.classList.add("active");
+    }
+  }, [isimageloaded]);
+  //
   return (
     <div className="home-container">
+      <div className="loading-screen" ref={loadingpage}>
+        <img src={require("../../IMAGES/catloadingbymm16zcat.gif")}></img>
+        <img src={require("../../IMAGES/catloadingbymm16ztext.gif")}></img>
+        <div id="loadstate">{loadstate}</div>
+      </div>
       <div className="smoothscroller-warper">
         <SmoothScroller ref={scrollbarstate} />
         <section className="home-first-section">
@@ -1360,7 +1420,7 @@ function Home() {
                         left: "1.3vw",
                       }}
                     ></img>
-                    <p
+                    <div
                       style={{
                         marginTop: "8vw",
                         textAlign: "center",
@@ -1375,7 +1435,7 @@ function Home() {
                       Programmer ,UX/UI ,Designer
                       <p style={{ marginBottom: "-0.5vw" }}></p>
                       I'm also looking for team :)
-                    </p>
+                    </div>
                   </div>
                   <div
                     style={{
@@ -1632,30 +1692,52 @@ function Home() {
             <img
               id="fixed-third-section-images1"
               src={require("../../IMAGES/webshowcase3.png")}
+              onLoad={() => {
+                setIsimageLoaded((prev) => ({ ...prev, img1: true }));
+              }}
             ></img>
             <img
               id="fixed-third-section-images2"
               src={require("../../IMAGES/webshowcase4.png")}
+              onLoad={() => {
+                setIsimageLoaded((prev) => ({ ...prev, img2: true }));
+              }}
             ></img>
+
             <img
               id="fixed-third-section-images3"
               src={require("../../IMAGES/webshowcase1.png")}
+              onLoad={() => {
+                setIsimageLoaded((prev) => ({ ...prev, img3: true }));
+              }}
             ></img>
             <img
               id="fixed-third-section-images4"
               src={require("../../IMAGES/webshowcase2.png")}
+              onLoad={() => {
+                setIsimageLoaded((prev) => ({ ...prev, img4: true }));
+              }}
             ></img>
             <img
               id="fixed-third-section-images5"
               src={require("../../IMAGES/webshowcase5.png")}
+              onLoad={() => {
+                setIsimageLoaded((prev) => ({ ...prev, img5: true }));
+              }}
             ></img>
             <img
               id="fixed-third-section-images6"
               src={require("../../IMAGES/webshowcase6.png")}
+              onLoad={() => {
+                setIsimageLoaded((prev) => ({ ...prev, img6: true }));
+              }}
             ></img>
             <img
               id="fixed-third-section-images7"
               src={require("../../IMAGES/webshowcase7.png")}
+              onLoad={() => {
+                setIsimageLoaded((prev) => ({ ...prev, img7: true }));
+              }}
             ></img>
           </div>
           <div className="fixed-third-section-new-theme">
@@ -1680,6 +1762,9 @@ function Home() {
               volume={isplayervisible}
               style={{
                 display: isShown ? "" : "none",
+              }}
+              onReady={() => {
+                setIsimageLoaded((prev) => ({ ...prev, video1: true }));
               }}
             ></ReactPlayer>
             <img
