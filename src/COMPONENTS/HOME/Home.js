@@ -911,13 +911,13 @@ function Home() {
                 |<span className="overall-nav-texts">Faq</span>
               </span>
               <span>
-                |<span className="overall-nav-texts">MM16zPORTFOLIO</span>
+                {/* |<span className="overall-nav-texts">MM16zPORTFOLIO</span> */}
               </span>
               <span>
                 |<span className="overall-nav-texts">เกี่ยวกับเรา</span>
               </span>
               <span>
-                |<span className="overall-nav-texts">ติดต่อเรา</span>
+                {/* |<span className="overall-nav-texts">ติดต่อเรา</span> */}
               </span>
             </div>
             <div className="section-four-overall-contents">
@@ -1480,15 +1480,15 @@ function Home() {
                 <div>ข้อกำหนด & เงื่อนไข</div>
                 <div>เกี่ยวกับเรา</div>
                 <div>Partner with us</div>
-                <div>ติดต่อเรา</div>
+                {/* <div>ติดต่อเรา</div> */}
                 <div>Cookie Statement</div>
               </div>
-              <div className="socials">
+              {/* <div className="socials">
                 <img id="" src={require("../../IMAGES/facebook.png")}></img>
                 <img id="" src={require("../../IMAGES/instagram.png")}></img>
                 <img id="" src={require("../../IMAGES/twitter.png")}></img>
                 <img id="" src={require("../../IMAGES/telegram.png")}></img>
-              </div>
+              </div> */}
               <div
                 id="cssline"
                 style={{
@@ -1502,7 +1502,7 @@ function Home() {
                   borderRadius: "5px",
                 }}
               ></div>
-              <a
+              {/* <a
                 id="portfoliolink"
                 href="https://mm16-portfolio.web.app/"
                 target="_blank"
@@ -1516,7 +1516,7 @@ function Home() {
                 }}
               >
                 https://mm16-portfolio.web.app/
-              </a>
+              </a> */}
               <a
                 id="allright"
                 style={{
@@ -1603,7 +1603,7 @@ function Home() {
                   เเละการปรับรูปเเบบ Theme ให้เข้ากับองค์กรของคุณ
                 </span>
               </div>
-              <div id="contactus">
+              {/* <div id="contactus">
                 <img src={require("../../IMAGES/contact-mail.png")}></img>
                 ติดต่อเรา
                 <br></br>
@@ -1622,7 +1622,7 @@ function Home() {
                 <span>
                   Gamil : <a href="mailto:imm0rz55160@gmail.com">Contact</a>
                 </span>
-              </div>
+              </div> */}
               <div
                 id="cssline"
                 style={{
