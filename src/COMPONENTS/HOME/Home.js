@@ -740,7 +740,7 @@ function Home() {
     });
   }, []);
   useEffect(() => {
-          console.log("meow");
+    console.log("meow");
     const count = Object.values(isimageloaded).filter(
       (item) => item === true
     ).length;
@@ -964,6 +964,9 @@ function Home() {
                   }}
                   value="LOGIN"
                 ></input>
+              </div>
+              <div className="ancm1">
+                *ไม่ได้รับทำนะครับ เเค่เเสดงเเนว Theme*
               </div>
               <div className="fakebanners">
                 <div id="fakebannerxD">
